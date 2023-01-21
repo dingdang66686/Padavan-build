@@ -126,12 +126,12 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SSWAN/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_SSWAN=y" >> .config
-        #sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config
+        echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NFSC/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_NFSC=y" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LIBCGROUP/d' .config
