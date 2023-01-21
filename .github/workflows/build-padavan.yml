@@ -137,8 +137,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LIBCGROUP/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_LIBCGROUP=y" >> .config
         #########################################################################################
+        cp -f .config configs/templates/$TNAME.config
+        cd ..
         sudo make
-        sudo mv -f images/*.trx /opt/images/
+        sudo mv -f trunk/images/*.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
