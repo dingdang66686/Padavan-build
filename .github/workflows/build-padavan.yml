@@ -133,7 +133,9 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NFSC/d' .config
-        echo "CONFIG_FIRMWARE_INCLUDE_NFSC=y' >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_NFSC=y" >> .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_LIBCGROUP/d' .config
+        echo "CONFIG_FIRMWARE_INCLUDE_LIBCGROUP=y" >> .config
         #########################################################################################
         sudo make
         sudo mv -f images/*.trx /opt/images/
