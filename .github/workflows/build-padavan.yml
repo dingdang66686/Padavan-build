@@ -43,7 +43,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P-NANO
+        TNAME: K2P
         KERNEL: 4.4
       run: |
         cd /opt/rt-n56u/trunk
@@ -78,7 +78,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config #adbyby plus+
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
-        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #集成xray执行文件  ~4.5M
+        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> .config #ddnsto  ~0.5M
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config  #阿里云盘  ~3m
@@ -120,8 +120,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_SOCAT=y" >> .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config
-        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=y" >> .config
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_HTOP=y" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
