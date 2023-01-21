@@ -139,7 +139,7 @@ jobs:
         #########################################################################################
         cp -f .config configs/templates/$TNAME.config
         cd ..
-        sudo make
+        sudo make $TNAME
         sudo mv -f trunk/images/*.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
